@@ -1,0 +1,78 @@
+import axios from 'axios' 
+import React, { useEffect, useState } from 'react' 
+ 
+function suggestion() { 
+  const [profile, setprofile] = useState(null) 
+  const [suggestion, setsuggestion] = useState([]) 
+  const [followed, setFollowed] = useState(0) 
+ 
+  useEffect(() => { 
+    axios.get(`${import.meta.env.VITE_API_URL}/profile`, { withCredentials: true }) 
+      .then(res => setprofile(res.data)) 
+      .catch(err => console.log(err)) 
+ 
+    axios.get(`${import.meta.env.VITE_API_URL}/suggestion`, { withCredentials: true }) 
+      .then(res => setsuggestion(res.data)) 
+      .catch(err => console.log(err)) 
+  }, [followed]) 
+ 
+  const handleFollow = async (id) => { 
+    axios.post(`${import.meta.env.VITE_API_URL}/followers`, { id }, { withCredentials: true }) 
+      .then(() => setFollowed(f => f + 1)) 
+      .catch(err => console.log(err)) 
+  } 
+ 
+  return ( 
+    <div className='pagesuggegtion position-fixed'> 
+      <div className='suggestions m-4'> 
+        {profile ? ( 
+          <div className='d-flex'> 
+             <img 
+              className='pp rounded-circle mt-1' 
+            src= {profile.profilePic ? `${import.meta.env.VITE_API_URL}${profile.profilePic}` : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23ccc'/%3E%3C/svg%3E" }
+              alt='profilePic' 
+            /> 
+            <div> 
+              <h5 className='me-2 mb-0'>{profile.username}</h5> 
+              <p className='d-block small text-muted mt-0 mb-2 '><small>{profile.name}</small></p> 
+            </div> 
+            <small className='ms-auto text-primary blue'>Switch</small> 
+          </div> 
+        ) : ( 
+          <p>Loading</p> 
+        )} 
+ 
+        <div className='d-flex'> 
+          <p className='text-muted'>Suggested for you</p> 
+          <b className='ms-auto'>See All</b> 
+        </div> 
+ 
+        {suggestion.length > 0 ? ( 
+          <div> 
+            {suggestion.map((s) => ( 
+              <div className='my-1' key={s._id}> 
+                <div className='d-flex'> 
+                  <img 
+                    className='pp rounded-circle mt-1' 
+                    src={s.profilePic ? `${import.meta.env.VITE_API_URL}${s.profilePic}` : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23ccc'/%3E%3C/svg%3E"} 
+                    alt='profilePic' 
+                  /> 
+                  <div> 
+                    <h5 className='me-2 mb-0'>{s.username}</h5> 
+                    <p className='d-block small text-muted mt-0 mb-2'>
+                          <small>{s.username}</small></p> 
+                  </div> 
+                  <a className='ms-auto text-primary blue' onClick={() => handleFollow(s._id)}>Follow</a> 
+                </div> 
+              </div> 
+            ))} 
+          </div> 
+        ) : ( 
+          <div>No suggestions</div> 
+        )} 
+      </div> 
+    </div> 
+  ) 
+} 
+ 
+export default suggestion

@@ -1,0 +1,141 @@
+
+
+.w--20{
+    width: 20%;
+}
+ 
+.w--30{
+    width: 30%;
+}
+
+.logo-text{
+    width: 100px;
+}
+.story{
+    height: 80px;
+    padding: 10px;
+}
+.dp{
+    height: 35px;
+    width: 35px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.image{
+    width:400px
+}
+.bi{
+    margin-right: 10px;
+}
+.pp{
+    height: 35px;
+    width: 35px;
+    margin-top: 0px;
+    margin-right: 5px;}
+
+.suggestions{
+    width: 80%;
+}
+.suggestions h5{
+    font-size: 16px;
+}
+
+
+.story-dp{
+    width: 52px;
+    height: 52px;
+}
+.gradient-border{
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(55deg,#ff00ff,#ff6600,#ffcc00);
+}
+
+.arrow{
+    font-size: 400px;
+    opacity: 0;
+    
+}
+
+.simg{
+    width: 400px;
+}
+.profile{
+    width: 100px;
+    height: 100px;
+}
+.pagesuggegtion{
+    width: 30%;
+}
+
+body { 
+  background-color: #fafafa; 
+} 
+ 
+.auth-wrapper { 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 4rem; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, 
+sans-serif; 
+} 
+ 
+.auth-box { 
+  background: #fff; 
+  border: 1px solid #dbdbdb; 
+  padding: 2.5rem 2.5rem 1.5rem; 
+  width: 350px; 
+} 
+ 
+.auth-logo { 
+  font-family: 'Segoe Script', cursive; 
+  font-size: 2.75rem; 
+  text-align: center; 
+  margin-bottom: 1.5rem; 
+  color: #262626; 
+} 
+ 
+.auth-input { 
+  width: 100%; 
+  background-color: #fafafa; 
+  border: 1px solid #dbdbdb; 
+  font-size: 0.85rem; 
+  padding: 0.6rem 0.75rem; 
+  border-radius: 3px; 
+  margin-bottom: 0.6rem; 
+  box-sizing: border-box; 
+} 
+ 
+.auth-btn { 
+  width: 100%; 
+  background-color: #0095f6; 
+  border: none; 
+  color: #fff; 
+  font-weight: 600; 
+  padding: 0.55rem; 
+  border-radius: 4px; 
+  margin-top: 0.5rem; 
+  cursor: pointer;
+  } 
+.auth-btn:hover { 
+background-color: #1877c7; 
+} 
+.auth-error { 
+color: #ed4956; 
+font-size: 0.8rem; 
+margin: 0.5rem 0; 
+} 
+.auth-switch { 
+text-align: center; 
+font-size: 0.9rem; 
+margin-top: 1.25rem; 
+} 
+.auth-switch a { 
+color: #0095f6; 
+font-weight: 600; 
+text-decoration: none; 
+}

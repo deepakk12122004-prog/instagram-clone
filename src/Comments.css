@@ -1,0 +1,6 @@
+.comments-page { max-width: 500px; margin: 0 auto; padding: 16px; } 
+.comments-header { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; } 
+.comments-list p { border-bottom: 1px solid #eee; padding: 8px 0; } 
+.comment-input-row { display: flex; gap: 8px; margin-top: 16px; } 
+.comment-input-row input { flex: 1; padding: 8px; border-radius: 20px; border: 1px solid #ccc; 
+}

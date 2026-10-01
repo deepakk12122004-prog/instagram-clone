@@ -1,0 +1,56 @@
+{
+  
+  "story": [
+    {
+      "id": "1",
+      "user": {
+        "id": 101,
+        "username": "john_doe",
+        "profilePic": "/image1.png"
+      },
+      "image": "/image4.jpg",
+      "timestamp": "2026-07-23T08:30:00Z"
+    },
+    {
+      "id": "2",
+      "user": {
+        "id": 102,
+        "username": "emma_watson",
+        "profilePic": "/image2.jpg"
+      },
+      "image": "/IMG9.jpg",
+      "timestamp": "2026-07-22T15:45:00Z"
+    },
+    {
+      "id": "3",
+      "user": {
+        "id": 103,
+        "username": "alex_smith",
+        "profilePic": "/IMG5.webp"
+      },
+      "image": "/image2.jpg",
+      "timestamp": "2026-07-21T19:20:00Z"
+    },
+    {
+      "id": "4",
+      "user": {
+        "id": 104,
+        "username": "sophia_lee",
+        "profilePic": "/image3.jpg"
+      },
+      "image": "/IMG5.webp",
+      "timestamp": "2026-07-20T11:10:00Z"
+    },
+    {
+      "id": "5",
+      "user": {
+        "id": 102,
+        "username": "emma_watson",
+        "profilePic": "/image2.jpg"
+      },
+      "image": "/IMG9.jpg",
+      "timestamp": "2026-07-22T15:45:00Z"
+    }
+  ]
+ 
+}
