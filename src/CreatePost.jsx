@@ -22,7 +22,7 @@ function CreatePost() {
     formData.append("caption", caption); 
     formData.append("location", location); 
  
-    await fetch(`${import.meta.env.VITE_API_URL}//api/posts`, { 
+    await fetch(`${import.meta.env.VITE_API_URL}/api/posts`, { 
       method: "POST", 
       credentials: "include", 
       body: formData 
