@@ -6,6 +6,7 @@ const session = require('express-session');
 const cors = require('cors');
 const multer = require('multer'); 
 const path = require('path');  
+require('dotenv').config();
  
 const app = express(); 
  
@@ -26,10 +27,10 @@ app.use(session({
   } 
 })); 
  
-// ---------- Database ---------- 
-mongoose.connect('mongodb://localhost:27017/instagram-clone') 
-  .then(() => console.log('MongoDB connected')) 
-  .catch(err => console.log('MongoDB error:', err)); 
+// ---------- Database ----------  
+mongoose.connect(process.env.MONGO_URI) 
+  .then(() => console.log("MongoDB Atlas connected")) 
+  .catch(err => console.log(err));
 
 //--------- Serve uploads + posts routes -----------
 app.use("/uploads", express.static("uploads"));
