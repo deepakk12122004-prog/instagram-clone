@@ -7,6 +7,7 @@ const cors = require('cors');
 const multer = require('multer'); 
 const path = require('path');  
 require('dotenv').config();
+require('dns').setServers(['8.8.8.8','1.1.1.1']);
  
 const app = express(); 
  
@@ -17,7 +18,7 @@ app.use(cors({
   credentials: true 
 })); 
 app.use(session({ 
-  secret: 'romba secret', 
+  secret: process.env.SESSION_SECRET, 
   resave: false, 
   saveUninitialized: false, 
   cookie: { 
