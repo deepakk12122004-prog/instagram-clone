@@ -7,14 +7,14 @@ const cors = require('cors');
 const multer = require('multer'); 
 const path = require('path');  
 require('dotenv').config();
-require('dns').setServers(['8.8.8.8','1.1.1.1']);
  
-const app = express(); 
+const app = express();
+app.set('trust proxy', 1);  
  
 // ---------- Middleware ---------- 
 app.use(express.json()); 
 app.use(cors({ 
-  origin: 'http://localhost:5173', 
+  origin: process.env.CLIENT_URL || 'http://localhost:5173',  
   credentials: true 
 })); 
 app.use(session({ 
@@ -22,9 +22,9 @@ app.use(session({
   resave: false, 
   saveUninitialized: false, 
   cookie: { 
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', 
+    secure: process.env.NODE_ENV === 'production', 
     maxAge: 1000 * 60 * 60 * 24, // 1 day 
-    sameSite: 'lax', 
-    secure: false 
   } 
 })); 
  
@@ -194,6 +194,6 @@ app.get('/admin', requireAuth, requireAdmin, (req, res) => {
 res.json({ message: 'Welcome admin' }); 
 }); 
 // ---------- Start Server ---------- 
-const PORT = 3000; 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+const PORT = process.env.PORT || 3000; 
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
