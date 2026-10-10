@@ -7,6 +7,9 @@ const cors = require('cors');
 const multer = require('multer'); 
 const path = require('path');  
 require('dotenv').config();
+
+const fs = require('fs');
+fs.mkdirSync(path.join(__dirname, 'uploads'), { recursive: true })
  
 const app = express();
 app.set('trust proxy', 1);  
