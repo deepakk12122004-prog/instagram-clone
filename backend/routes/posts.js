@@ -1,7 +1,7 @@
 const express = require("express"); 
 const multer = require("multer"); 
 const path = require("path"); 
-const Post = require("../models/Post"); 
+const Post = require("../models/post"); 
 const router = express.Router(); 
  
 const storage = multer.diskStorage({ 
